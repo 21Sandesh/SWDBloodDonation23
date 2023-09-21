@@ -49,21 +49,22 @@
             </div>
             <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
                 <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-                    <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Social Welfare and Development
+                    <h1><a href="" rel="dofollow">Social Welfare and Development
                             Committe</a>
                     </h1>
                 </div>
                 <div class="box-root padding-bottom--24 flex-flex flex-justifyContent--center">
-                    <h1><a href="http://blog.stackfindover.com/" rel="dofollow">VIT Pune</a>
+                    <h1><a href="" rel="dofollow">VIT Pune</a>
                     </h1>
                 </div>
                 <div class="formbg-outer">
                     <div class="formbg">
                         <div class="formbg-inner padding-horizontal--48">
-                            <span class="padding-bottom--15">Blood Donation'23 - OC Form</span>
+                            <span class="padding-bottom--15"><strong>Blood Donation'23 - OC Form</strong></span>
                             <form
                                 action="https://docs.google.com/forms/d/e/1FAIpQLSeVfmCW0IBFmJMKktPhiDsJBQe331ZnAyYAo_FJhCbkrTw5RQ/formResponse"
                                 id="form">
+
                                 <div class="field padding-bottom--24">
                                     <label for="name">Name</label>
                                     <input type="name" name="entry.1422379208" placeholder="Name" />
@@ -101,46 +102,67 @@
                                     </select>
                                 </div>
                                 <div class="field padding-bottom--24">
+                                    <label for="coorddomain">Previous Allotted Activity/Event</label>
+                                    <select name="entry.73308595" type="allottedactivity">
+                                        <option value="Animal Rescue">Animal Rescue</option>
+                                        <option value="Go Green">Go Green</option>
+                                        <option value="Police Mitra">Police Mitra</option>
+                                        <option value="Matadhikar">Matadhikar</option>
+                                        <option value="Swachha Pune">Swachha Pune</option>
+                                        <option value="Utkarsh">Utkarsh</option>
+                                        <option value="Vatsalya">Vatsalya</option>
+                                    </select>
+                                </div>
+                                <div class="field padding-bottom--24">
                                     <label for="applyfor">Sector to Apply For (Select Any 2)</label>
                                     <label class="container">Aesthetics
-                                        <input type="checkbox" name="entry.296905780" value="Aesthetics">
+                                        <input class="sectorchbx" type="checkbox" name="entry.296905780"
+                                            value="Aesthetics">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="container">Hospitality
-                                        <input type="checkbox" name="entry.296905780" value="Hospitality">
+                                        <input class="sectorchbx" type="checkbox" name="entry.296905780"
+                                            value="Hospitality">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="container">Publicity
-                                        <input type="checkbox" name="entry.296905780" value="Publicity">
+                                        <input class="sectorchbx" type="checkbox" name="entry.296905780"
+                                            value="Publicity">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="container">Refreshment
-                                        <input type="checkbox" name="entry.296905780" value="Refreshment">
+                                        <input class="sectorchbx" type="checkbox" name="entry.296905780"
+                                            value="Refreshment">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="container">Registration and Donor Count
-                                        <input type="checkbox" name="entry.296905780" value="Registration and Donor Count">
+                                        <input class="sectorchbx" type="checkbox" name="entry.296905780"
+                                            value="Registration and Donor Count">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="container">Security
-                                        <input type="checkbox" name="entry.296905780" value="Security">
+                                        <input class="sectorchbx" type="checkbox" name="entry.296905780"
+                                            value="Security">
                                         <span class="checkmark"></span>
                                     </label>
-                                    
-                                    <br>
                                 </div>
                                 <span class="padding-bottom--15">Terms and Conditions</span>
                                 <div>
                                     <ul>
                                         <li>Event planning will commence from 25th September to 13th October.</li>
                                         <li>Attendance is <strong>Mandatory</strong> every day after 4PM.</li>
-                                        <li>Coordination for Blood Donation, Efforts are required, alongside the management
+                                        <li>Coordination for Blood Donation, Efforts are required, alongside the
+                                            management
                                             of <strong>Assigned work (OC)</strong> for the ongoing Activity/Event.</li>
                                         <li>Weekends will not host blood donation activities (<strong>Mandatory</strong>
                                             attendance if needed).</li>
                                         <li>The entire OC team is responsible for <strong>Aesthetics and
                                                 Publicity</strong> Sectors, Assigned Sectors will start working 2-3 Days
                                             Prior to the Event. </li>
+                                        <li>On the Basis of Activity/Event Allotted Earlier, <strong>Workload
+                                                distribution and Time</strong> will be Considered. This opportunity
+                                            presents a chance to Actively Participate in the College's <strong>Flagship
+                                                Event</strong>, creating lasting memories together.</li>
                                     </ul>
                                 </div>
                                 <div>
@@ -156,6 +178,29 @@
                 </div>
             </div>
         </div>
+        <script>
+            const maxAllowedCheckboxes = 2;
+
+            const form = document.getElementById('form');
+            const checkboxes = document.querySelectorAll('.sectorchbx');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    let checkedCount = 0;
+
+                    checkboxes.forEach(cb => {
+                        if (cb.checked) {
+                            checkedCount++;
+                        }
+                    });
+
+                    if (checkedCount > maxAllowedCheckboxes) {
+                        checkbox.checked = false; // Uncheck the third checkbox
+                        alert('You can only select up to 2 checkboxes.');
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>
